@@ -9,11 +9,8 @@ using static HotelBooking.UnitTests.TestDoubles.BookingManagerBuilder;
 
 namespace HotelBooking.UnitTests
 {
-    // Tests for BookingManager.GetFullyOccupiedDates.
-    //
-    // A date is fully occupied when the number of active bookings covering it is at least
-    // the number of rooms in the hotel. Unless a test builds its own hotel, the scenario is
-    // two rooms, both booked from day 10 to day 20 inclusive.
+    
+   
     public class BookingManagerGetFullyOccupiedDatesTests
     {
         private const int OccupiedFrom = 10;
@@ -25,7 +22,6 @@ namespace HotelBooking.UnitTests
                 .WithAllRoomsOccupied(OccupiedFrom, OccupiedTo)
                 .Build();
 
-        // Data-driven with class data: the rows live in OccupiedDateRanges.
         [Theory]
         [ClassData(typeof(OccupiedDateRanges))]
         public async Task GetFullyOccupiedDates_VariousRanges_ReturnsExpectedNumberOfDates(

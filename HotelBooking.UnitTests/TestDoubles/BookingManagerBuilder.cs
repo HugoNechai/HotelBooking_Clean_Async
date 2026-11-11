@@ -27,7 +27,8 @@ namespace HotelBooking.UnitTests.TestDoubles
             rooms.AddRange(roomIds.Select(id => new Room { Id = id, Description = "Room " + id }));
             return this;
         }
-
+        
+        // uses specified date and time
         public BookingManagerBuilder WithBooking(int roomId, int startOffset, int endOffset, bool isActive = true)
         {
             bookings.Add(new Booking
@@ -50,6 +51,7 @@ namespace HotelBooking.UnitTests.TestDoubles
             return this;
         }
 
+        //when get all is called onthe fake repository, returns all bookings the builder has created
         public BookingManager Build()
         {
             RoomRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(rooms);

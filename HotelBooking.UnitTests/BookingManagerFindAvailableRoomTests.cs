@@ -26,7 +26,6 @@ namespace HotelBooking.UnitTests
                 .WithAllRoomsOccupied(OccupiedFrom, OccupiedTo)
                 .Build();
 
-        // Data-driven with inline data: each row is one equivalence class or boundary.
         [Theory]
         // Requested period lies completely before the occupied period.
         [InlineData(1, 5, true)]
